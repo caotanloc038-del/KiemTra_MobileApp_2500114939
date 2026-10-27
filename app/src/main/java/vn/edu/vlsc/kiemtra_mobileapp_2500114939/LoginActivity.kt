@@ -1,16 +1,14 @@
 package vn.edu.vlsc.kiemtra_mobileapp_2500114939
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,9 +33,9 @@ class MainActivity : AppCompatActivity() {
             } else {
                 tvStatus.text = "Đăng nhập hợp lệ"
                 // Chuyển sang Câu 2 (sẽ làm ở nhánh cau-2)
-                // val intent = Intent(this, ProfileActivity::class.java)
-                // intent.putExtra("EMAIL_USER", email)
-                // startActivity(intent)
+                val intent = Intent(this, ProfileActivity::class.java)
+                intent.putExtra("EMAIL_USER", email)
+                startActivity(intent)
             }
         }
     }
